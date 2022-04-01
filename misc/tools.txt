@@ -1,0 +1,19 @@
+David Chae
+
+1. ifconfig
+2. nslookup [hostname]
+3. nslookup [ip address]
+4. scp [file] [destination]
+5. netstat or fuser [port]
+6. nmap -sT -O [host]
+7. wget "[webpage]" -O filename
+8. curl [webpage]
+9. For question 7, add -S. For question 8, add -v.
+
+sources:
+https://www.javatpoint.com/get-hostname-from-ip-address
+http://manpages.ubuntu.com/manpages/jammy/en/man1/scp.1.html
+https://web.mit.edu/rhel-doc/4/RH-DOCS/rhel-sg-en-4/s1-server-ports.html
+https://www.cyberciti.biz/faq/what-process-has-open-linux-port/
+https://linuxize.com/post/wget-command-examples/
+https://www.geeksforgeeks.org/curl-command-in-linux-with-examples/

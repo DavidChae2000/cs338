@@ -1,3 +1,3 @@
 David Chae
 
-My current plan with Kali is to use the computers in the classroom for now to see how it goes, then maybe switch to my personal device.
+I have installed kali on my personal computer
