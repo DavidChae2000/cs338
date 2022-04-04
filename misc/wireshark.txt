@@ -1,0 +1,30 @@
+David Chae
+
+===DAYTIME===
+1. 
+1  0.00000  192.168.52.128  132.163.96.1  TCP  74  57680 -> 13 [SYN] ...
+2  0.03938  132.163.96.1  192.168.52.128  TCP 60  13 -> 57680 [SYN, ACK] ...
+3  0.39427  192.168.52.128  132.163.96.1  TCP 54  57680 -> 13 [ACK] ...
+
+2. The client uses port 57680 which is randomized so that the server doesn't send the data to a used port
+
+3. 
+4  0.06749  132.163.96.1  192.168.52.128  DAYTIME  105  DAYTIME Response
+
+4. 59673 22-04-04 18:55:53 50 0 0 31.1 UTC(NIST)
+The 22-04-04, 18:55:53, and UTC(NIST) are obviously the date, time, and timezone respectively but I haven't been able to figure out what the other numbers mean. 59673 and 50 0 0 probably has to do with the server itself as I attempted this on kali's terminal and my own and got those same numbers. 31.1 probably has to do with the particular instance of requesting DAYTIME data as it changed everytime I ran the test.
+
+5. [SYN] is a sychronization package and is used to initiate a syncronization/connection.
+
+6. [ACK] means it is an acknowledgement package.
+
+7. [FIN] is a finish package to initiate the ending of the connection.
+
+8. In my test it seems that the client initiated the closing of the connection as the source of the first [FIN] package came from the client IP address.
+
+===HTTP===
+1. It seems there were two connections opened.
+
+2. The GET /index.html HTTP/1.1 command occured on the 7th frame, right after the two 3-way-handshakes for the two connections.
+
+3. The GET /jeff_square_head.jpg HTTP/1.1 occured on the 11th frame, after the client acknowledged the recieving of the homepage.
