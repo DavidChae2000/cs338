@@ -1,0 +1,16 @@
+David Chae
+
+Diffie Hellman
+The shared secret is 36.
+Using the python code titled dhtest.py in the being-eve folder, I went through every natural number less than p = 59, adding every value x such that A = g^x mod p is true into a list then did the same for B.
+A^y mod p = B^x mod p = g^xy mod p is the shared secret.
+If the integers involved much larger numbers, then the python program would take much longer to process, as it needs to go through a much larger amount of numbers.
+
+
+RSA
+Message: Hey Bob. It's even worse than we thought! Your pal, Alice. https://www.schneier.com/blog/archives/2022/04/airtags-are-used-for-stalking-far-more-than-previously-reported.html 
+
+Using the python code titled rsatest.py in the being-eve folder, I went through the integers between 2 and sqrt(nb) as 2 is the smallest prime number and since at least one prime factor of every number will be less than or equal to the number's square root. Using this to find the two factors of nb, I then got lambda(nb).
+Then I went through each natural number less than lambda(nb) to find a possible db and then decoded the message using it. Alice encoded the message by taking the ASCII values of each character applying x^eb mod nb to them. So decoding the message would be done by taking y^db mod nb for each y of the encoded message and reading the ASCII values.
+If there were larger numbers involved then each step of this program would take much longer.
+Eve also has the same encoding key that Alice used, so it's essentially just finding db such that eb*db mod λ(nb) = 1 and it doesn't have to be the same db that Bob has.
