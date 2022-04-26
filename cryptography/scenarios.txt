@@ -1,0 +1,22 @@
+David Chae
+
+---Simple Communication Scenarios---
+1. Alice and Bob can use Diffie-Hellman to agree on a shared key K that Eve cannot get and use it to communicate.
+
+2. Along with the message itself, Alice can send a hashed version of the message that can help verify that the message is what Alice intended.
+
+3. Alice and Bob can rely on a third party certificate authority to verify that the public key provided goes with the correct person.
+
+---Questions about breaking security---
+4. 
+a. Alice could say that C got corrupted while sending. Data getting corrupted in a way that still looks like a proper contract doesn't seem likely.
+b. Alice could say that Bob changed C. This can easily be proved or disproved by hashing C, encrypting it with S_A, and then comparing it to the signature that went with C.
+c. Alice could say that Bob decrypted E(S_A, C) incorrectly, resulting in an incorrect C. Not likely for the same reason as a.
+
+5. Sig_CA = E(S_CA, H(bob.org || P_B))
+
+6. Alice could send Bob some arbitrary message M and ask Bob to send back E(S_B, M) so that Alice can decode it with P_B from Cert_B.
+
+7. 
+a. Mal could pretend to be some certificate authority. Mal could then create a fake certificate that pretends to have Bob's P_B but would instead have P_M.
+b. Mal could request to create a certificate while pretending to be Bob and create a fake Bob certificate.
