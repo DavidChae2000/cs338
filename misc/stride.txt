@@ -1,0 +1,36 @@
+David Chae
+
+* - threat
+= - mitigation
+S: 
+* Some Mal could access someone's account and post things while pretending to be that person.
+= two-factor authentication or something similar
+
+* Some Mal could pretend to be the server to access whatever the client sends them
+= Confirm server's identity with SSL or TLS
+
+T: 
+* Someone could replace all the tapirs related data with alpacas
+= use hashes and/or signatures to validate data
+
+R:
+* Completely deleting an account in order to erase evidence of a transaction of a tapirs pet
+= logging and backing data/actions or something similar to double-entry bookkeeping
+
+I:
+* Some Eve eavesdrops the conversation between the client and the server
+= client and server communicates over https
+
+* Someone sneaks into your house while you are away and steals all the data from the database server on your computer
+= Make sure your house is well secured
+
+D:
+* Some organization(or single person) turns off the internet
+= I don't know. This would be a world-wide crisis
+
+* Malicious code enters the web client or app to create errors or disable features
+= Have regular maintance checks
+
+E:
+* Tapir Unlimited is secretly a cult and only the top brass can access all the secret data collected from their followers. Some government organization investigating the cult is trying to access the secret data
+= Use some security policy model such as the Bell-LaPadula model or Biba model to restrict access to the secret data
